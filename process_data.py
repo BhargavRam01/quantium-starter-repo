@@ -11,8 +11,7 @@ for file in files:
 
 combined_df = pd.concat(df_list)
 
-pink_df = combined_df[combined_df["product"] == "Pink Morsel"]
-
+pink_df = combined_df[combined_df["product"] == "pink morsel"].copy()
 pink_df["Sales"] = pink_df["quantity"] * pink_df["price"]
 
 final_df = pink_df[["Sales", "date", "region"]]
